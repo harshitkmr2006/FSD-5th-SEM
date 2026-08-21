@@ -1,10 +1,22 @@
+// const div = document.createElement('root');
+// const h1 = document.createElement('h1');
+// h1.innerText = "WELCOME TO FSD CLASS";
+// div.appendChild(h1);
+
+
+// Create React root
 const root = ReactDOM.createRoot(document.getElementById('root'));
-const reactElement = <div>
-    <div>Product 1</div>
-    <div>Product 2</div>
-    <div>Product 3</div>
-    <div>Product 4</div>
-    <div>Product 5</div>
-    <div>Product 6</div>
-</div>
-root.render(reactElement);
+
+// Create nested elements using React.createElement
+const h1 = React.createElement(
+  'div',
+  {},
+  React.createElement(
+    'div',
+    {},
+    React.createElement('div', {}, '1')
+  )
+);
+
+// Render to DOM
+root.render(h1);
